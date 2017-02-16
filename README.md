@@ -1,2 +1,2 @@
 # lucasnovaes.github.io
-Personal site on GitHub on under construction.
+Personal site on GitHub.
