@@ -1,0 +1,134 @@
+/* Input */
+
+.form-group {
+  margin-top: 20px;
+  position: relative;
+  display: flex;
+  height: 45px;
+  float: left;
+}
+
+.form-group::after {
+  width: 100%;
+  height: 2px;
+  background: #0091FF;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: '';
+  transform: scaleX(0);
+  transition: ease-in-out 240ms all;
+}
+
+.form-group.animate::after {
+  transform: scaleX(1);
+}
+.form-group-select.animate::after {
+  transform: scaleX(1);
+}
+
+.control-label {
+  opacity: 0.4;
+  pointer-events: none;
+  position: absolute;
+  transform: translate3d(5px, 22px, 0) scale(1);
+  transform-origin: left top;
+  transition: 240ms;
+}
+
+.form-group.focused .control-label,
+.form-group-select.focused .control-label {
+  opacity: 1;
+  transform: scale(0.75);
+}
+
+.form_campos {
+  height: 31px;
+  width: 100%;
+  color: #484848;
+  align-self: flex-end;
+  padding: 5px;
+  outline: none;
+  border: 0 solid #484848;
+  border-bottom-width: 1px;
+  background: transparent;
+  border-radius: 0;
+}
+
+.form_campos:hover,
+.form_campos:focus {
+  border-color: #0091FF;
+}
+
+.form_disabled,
+.form_disabled:hover,
+.form_disabled:focus {
+  border-color: #D7D7D7;
+}
+
+
+/* Select */
+
+.select {
+  height: 31px;
+  color: #484848;
+  border-radius: 0;
+  border: 0 solid #484848;
+  border-bottom-width: 1px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  outline: none;
+  margin-top: 14px;
+  background: transparent;
+  padding-right: 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.select::after {
+  width: 100%;
+  height: 1px;
+  background: #0091FF;
+  position: absolute;
+
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select:hover,
+.select:focus {
+  border: 0 solid;
+  border-bottom-width: 1px;
+  border-color: #0091FF;
+  transform: scaleX(1);
+}
+
+.form-group-select {
+  margin-top: 20px;
+  position: relative;
+  height: 45px;
+  float: left;
+}
+
+.form-group-select:after {
+    width: 100%;
+    height: 2px;
+    background: #0091FF;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: '';
+    transform: scaleX(0);
+    transition: ease-in-out 240ms all;
+}
+
+.select_disabled,
+.select_disabled:hover,
+.select_disabled:focus {
+  border: 0 solid;
+  border-bottom-width: 1px;
+  border-color: #D7D7D7;
+}
