@@ -1,111 +1,97 @@
-	var timeoutId = 0;
-	var timeoutClearId = 0;
-	var oneMin = 60000; // How many milliseconds
-	var bpm = 100;
-	var bpb = 4;
-	var beatCount = 1;
-	var left = 1;
-	var isPlaying = false;
+var timeoutId = 0;
+var timeoutClearId = 0;
+var oneMin = 60000; // 60000 ms = 60 s = 1 min
+var bpm = 100;
+var bpb = 4;
+var beatCount = 1;
+var left = 1;
+var isPlaying = false;
 
-	$(document).ready(function() {
-	    $("#bpmPlus").click(function() {
-	        var currentValue = parseFloat($("#bpm").val());
-	        $("#bpm").val(currentValue+1);
-	        bpm = parseFloat($("#bpm").val());
-	    })
-	    $("#bpmMinus").click(function() {
-	        var currentValue = parseFloat($("#bpm").val());
-	        $("#bpm").val(currentValue-1);
-	        bpm = parseFloat($("#bpm").val());
-	    })
-	    $("#bpm").change(function() {
-	        bpm = parseFloat($("#bpm").val());
-	    })
+var bpmMinus = document.getElementById('bpmMinus');
+var bpmPlus = document.getElementById('bpmPlus');
+var bpmId = document.getElementById('bpm');
+var bpbMinus = document.getElementById('bpbMinus');
+var bpbPlus = document.getElementById('bpbPlus');
+var bpbId = document.getElementById('bpb');
+var beatIndicatorId = document.getElementById('beatIndicator');
+var play = document.getElementById('play');
 
-	    $("#bpbPlus").click(function() {
-	        var currentValue = parseFloat($("#bpb").val());
-	        $("#bpb").val(currentValue+1);
-	        bpb = parseFloat($("#bpb").val());
-	    })
-	    $("#bpbMinus").click(function() {
-	        var currentValue = parseFloat($("#bpb").val());
-	        $("#bpb").val(currentValue-1);
-	        bpb = parseFloat($("#bpb").val());
-	    })
-	    $("#bpb").change(function() {
-	        bpb = parseFloat($("#bpb").val());
-	    })
-
-	    $("#play").click(function() {
-	        if (!isPlaying) {
-	        	play.innerHTML = 'Stop'
-		        beatCount = 1
-		        beat();
-		        isPlaying = true;
-		    } else {
-		    	play.innerHTML = 'Play'
-		    	clearTimeout(timeoutId);
-		        beatCount = 1
-		        beatReset();
-		        isPlaying = false;
-		    }
-	    })
-	});
-
-	function beat() {
-	    
-	    timeoutId = setTimeout("beat()", (oneMin / bpm));
-	    $("#beatIndicator").show();
-	    $("#beatIndicator").html(""); // Clear HTML
-	    $("#beatIndicator").html(beatCount);
-
-	    if (beatCount == 1) {
-	        barBeep();
+(function() {
+    bpmPlus.addEventListener('click', function(){
+        var currentValue = parseFloat(bpmId.value);
+        bpmId.value = currentValue+1;
+        bpm = parseFloat(bpmId.value);
+    })
+    bpmMinus.addEventListener('click', function(){
+        var currentValue = parseFloat(bpmId.value);
+        bpmId.value = currentValue-1;
+        bpm = parseFloat(bpmId.value);
+    })
+    bpmId.addEventListener('change', function(){
+        bpm = parseFloat(bpmId.value);
+    })
+    bpbPlus.addEventListener('click', function(){
+        var currentValue = parseFloat(bpbId.value);
+        bpbId.value = currentValue+1;
+        bpb = parseFloat(bpbId.value);
+    })
+    bpbMinus.addEventListener('click', function(){
+        var currentValue = parseFloat(bpbId.value);
+        bpbId.value = currentValue-1;
+        bpb = parseFloat(bpbId.value);
+    })
+    bpbId.addEventListener('change', function(){
+        bpb = parseFloat(bpbId.value);
+    })
+    play.addEventListener('click', function() {
+        if (!isPlaying) {
+        	play.innerHTML = 'Stop'
+	        beatCount = 1
+	        beat();
+	        isPlaying = true;
+	    } else {
+	    	play.innerHTML = 'Play'
+	    	clearTimeout(timeoutId);
+	        beatCount = 1
+	        isPlaying = false;
 	    }
-	    else {
-	        beep();
-	    }
+    })
+})();
+function beat() {
+    
+	timeoutId = setTimeout("beat()", (oneMin / bpm));
+    beatIndicatorId.style.display = "block";
+    beatIndicatorId.innerHTML= ""; // Clear HTML
+    beatIndicatorId.innerHTML = beatCount;
 
-	    //setTimeout('$("#beatIndicator").hide()', 100);
+    if (beatCount == 1) {
+        barBeep();
+    }
+    else {
+        beep();
+    }
 
-	    moveBeatBar();
+    moveBeatNum();
 
-	    beatCount++;
-	    if (beatCount > bpb) {
-	        beatCount = 1;
-	    }
-	}
+    beatCount++;
+    if (beatCount > bpb) {
+        beatCount = 1;
+    }
+}
 
-	function beep() {
-	    $("#beatIndicator").removeClass('barBeep');
-	    $("#beatIndicator").addClass('beep');
-		document.getElementById('beepOne').play();
-	}
-
-	function barBeep() {
-	    $("#beatIndicator").removeClass('beep');
-	    $("#beatIndicator").addClass('barBeep');
-		document.getElementById('beepTwo').play();
-	}
-	function moveBeatBar()
-	{
-	    var bps = 1/(bpm/60);
-	    if (left) {
-	        $("#beatBar").removeClass('beatReset');
-	        $("#beatBar").removeClass('beatRight');
-	        $("#beatBar").addClass('beatLeft');
-	        left = 0;
-	    }
-	    else {
-	        $("#beatBar").removeClass('beatReset');
-	        $("#beatBar").removeClass('beatLeft');
-	        $("#beatBar").addClass('beatRight');
-	        left++;
-	    }
-	}
-	function beatReset()
-	{
-	    $("#beatBar").removeClass('beatRight');
-	    $("#beatBar").removeClass('beatLeft');
-	    $("#beatBar").addClass('beatReset');
-	}
+function beep() {
+	document.getElementById('beepOne').play();
+}
+function barBeep() {
+	document.getElementById('beepTwo').play();
+}
+function moveBeatNum()
+{
+    var bps = 1/(bpm/60);
+    if (left) {
+        left = 0;
+    }
+    else {
+        left++;
+    }
+}
