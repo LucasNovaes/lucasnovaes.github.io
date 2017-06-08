@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	
+	<title>Metrônomo - Rockstar</title>
+	<link rel="stylesheet" href="src/style.scss">
+
+</head>
+<body>
+	<div id="metronome">
+	    <div id="metronomeBg">
+	        <div id="beatBarContainer">
+	            <div id="beatBar">&nbsp;</div>
+	        </div>
+	        <br />
+	        <div id="beatIndicatorContainer">
+	            <div id="beatIndicator" class="beep">1</div>
+	        </div>
+
+	        <div id="settingsContainer">
+	            <div id="settings">
+	                <div>
+	                    <label>Batidas por minuto:</label>
+	                    <input type="text" name="bpm" id="bpm" value="100" />
+	                    <input type="button" name="bpmPlus" id="bpmPlus" class="plusMinus" value="+" />
+	                    <input type="button" name="bpmMinus" id="bpmMinus" class="plusMinus" value="-" />
+	                </div>
+	                <div>
+	                    <label>Compasso:</label>
+	                    <input type="text" name="bpb" id="bpb" value="4" />
+	                    <input type="button" name="bpbPlus" id="bpbPlus" class="plusMinus" value="+" />
+	                    <input type="button" name="bpbMinus" id="bpbMinus" class="plusMinus" value="-" />
+	                </div>    
+	                <div>
+	                	<button id="play" name="play">Play</button>
+	                	<audio id="beepOne" src="media/ClapLow.wav"></audio>
+	                    <audio id="beepTwo" src="media/ClapHigh.wav"></audio>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/metronomo.js"></script>
+
+</body>
+</html>
