@@ -1,0 +1,16 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "com.diletta.claropay",
+    "package_name": "br.com.claropay.claropay",
+    "sha256_cert_fingerprints": ["34:01:17:65:96:5B:FE:7E:79:5C:FA:38:88:C8:92:95:B0:E5:40:F8:9E:57:4B:1B:4C:74:8F:B5:7B:10:87:7B"]
+  }
+},
+{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "com.diletta.claropay",
+    "package_name": "br.com.claro.claropay.dev",
+    "sha256_cert_fingerprints": ["34:01:17:65:96:5B:FE:7E:79:5C:FA:38:88:C8:92:95:B0:E5:40:F8:9E:57:4B:1B:4C:74:8F:B5:7B:10:87:7B"]
+  }
+}]

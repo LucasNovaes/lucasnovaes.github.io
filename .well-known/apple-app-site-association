@@ -1,0 +1,27 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["7F3N7RFQ38.br.com.claro.claropay.dev", "7F3N7RFQ38.br.com.claropay.claropay"],
+        "components": [
+          {
+            "#": "no_universal_links",
+            "exclude": true,
+            "comment": "Matches any URL whose fragment equals no_universal_links and instructs the system not to open it as a universal link"
+          },
+          {
+            "/": "/invoice-payment",
+            "comment": "Matches any URL whose path starts with /invoice-payment"
+          },
+          {
+            "/": "/onboarding",
+            "comment": "Matches any URL whose path starts with onboarding"
+          }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+        "apps": ["7F3N7RFQ38.br.com.claro.claropay.dev", "7F3N7RFQ38.br.com.claropay.claropay"]
+  }
+}
