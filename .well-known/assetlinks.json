@@ -3,8 +3,7 @@
   "target": {
     "namespace": "android_app",
     "package_name": "com.diletta.claropay",
-    "sha256_cert_fingerprints": ["34:01:17:65:96:5B:FE:7E:79:5C:FA:38:88:C8:92:95:B0:E5:40:F8:9E:57:4B:1B:4C:74:8F:B5:7B:10:87:7B",
-  "25:70:B1:5C:2B:B7:D6:C3:2D:20:0A:68:EF:9B:43:94:55:AE:1F:22:95:85:45:4E:E9:19:54:13:48:87:4C:87"]
+    "sha256_cert_fingerprints": ["34:01:17:65:96:5B:FE:7E:79:5C:FA:38:88:C8:92:95:B0:E5:40:F8:9E:57:4B:1B:4C:74:8F:B5:7B:10:87:7B"]
   }
 },
 {
