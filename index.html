@@ -1,526 +1,273 @@
 <!DOCTYPE html>
-<html lang="pt_BR">
+<html lang="en">
 
 <head>
-
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Web Portfolio">
-    <meta name="author" content="Lucas M. Novaes">
+    <meta name="theme-color" content="#06070c">
+    <meta name="description" content="Lucas Novaes — Software Developer. Digital business card & professional profile.">
+    <meta name="author" content="Lucas Novaes">
 
-    <title>Lucas Novaes</title>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Lucas Novaes — Software Developer">
+    <meta property="og:description" content="Digital business card & professional profile.">
+    <meta property="og:url" content="https://lucasnovaes.github.io/">
+    <meta property="og:image" content="https://lucasnovaes.github.io/img/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title>Lucas Novaes — Software Developer</title>
 
-    <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
-        rel='stylesheet' type='text/css'>
-    <link
-        href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
-        rel='stylesheet' type='text/css'>
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
-    <!-- Theme CSS -->
-    <link href="css/creative.min.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body id="page-top">
+<body id="top">
 
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top"><i class="fa fa-2x fa-angle-double-up"></i></a>
-            </div>
+    <div class="bg-canvas" aria-hidden="true">
+        <canvas id="scene"></canvas>
+        <div class="bg-vignette"></div>
+    </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- <li>
-                        <a class="page-scroll" href="#about">Sobre</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Conhecimentos</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
-                    </li> -->
-                    <li>
-                        <a class="page-scroll" href="#contact">Contatos</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
+    <nav class="topnav">
+        <a class="topnav__brand" href="#top">LN<span class="dot">.</span></a>
+        <ul class="topnav__links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
 
-    <header>
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1 id="homeHeading">LMN SISTEMAS</h1>
-                <hr>
-                <h2>Construindo ideias e soluções otimizadas em software</h2>
-                <a href="#contact" class="btn btn-primary page-scroll"><i class="fa fa-2x fa-angle-double-down"></i></a>
-            </div>
-        </div>
-    </header>
-
-    <!-- <section class="bg-primary" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Sobre</h2>
-                    <hr class="light">
-                    <p></p>
-                </div>            
-                <div class="col-lg-3 col-md-4 col-lg-offset-3">
-			<img src="img/lucasnovaes-avatar.png" class="img-profile img-responsive" alt="Profile photo">
-		</div>
-                <div class="col-lg-5 col-md-6">
-		     <h3>Lucas M. Novaes</h3>
-			<p>Desenvolvedor Web desde 2014<br>
-			Bacharel em Sistemas de Informação, PUC Minas-2015</p>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Conhecimentos</h2>
-                    <hr class="primary">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-file-code-o text-primary sr-icons"></i>
-                        <h3>Linguagens de programação</h3>
-                        <p class="text-muted">Java</p>
-                        <p class="text-muted">PHP</p>
-			<p class="text-muted">C#</p>
-                        <p class="text-muted">JavaScript</p>
-                        <p class="text-muted">CSS3</p>
-                        <p class="text-muted">HTML5</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
-                        <h3>Frameworks</h3>
-			<p class="text-muted">Zend</p>
-                        <p class="text-muted">RichFaces</p>
-                        <p class="text-muted">Hibernate</p>
-                        <p class="text-muted">Bootstrap</p>
-                        <p class="text-muted">JQuery</p>
-			<p class="text-muted">E outros...</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
-                        <h3>Controle de versão</h3>
-                        <p class="text-muted">GitHub</p>
-			<p class="text-muted">GitLab</p>
-			<p class="text-muted">Bitbucket</p>
-                        <p class="text-muted">SVN</p>
-                    </div>
-                </div>
-            </div>   
-            <div class="row">
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-cubes text-primary sr-icons"></i>
-                        <h3>Metodologias/IDE's</h3>
-                        <p class="text-muted">SCRUM Ágil</p>
-                        <p class="text-muted">WordPress</p>
-                        <p class="text-muted">Android Studio</p>
-			<p class="text-muted">Eclipse</p>
-                        <p class="text-muted">NetBeans</p>
-                        <p class="text-muted">Sublime Text</p>
-                        <p class="text-muted">Notepad++</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-database text-primary sr-icons"></i>
-                        <h3>Banco de Dados</h3>
-			<p class="text-muted">Oracle</p>
-                        <p class="text-muted">Postgresql</p>
-                        <p class="text-muted">MySQL</p>
-                        <p class="text-muted">phpMyAdmin</p>
-                        <p class="text-muted">SQL Server</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- <section class="no-padding" id="portfolio">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Portfolio</h2>
-                    <hr class="primary">
-                </div>
-            </div>
-            <div class="row no-gutter">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="portfolio-box" data-toggle="modal" data-target="#modal0">
-                        <img src="img/portfolio/thumbnails/rockster-foto.png" class="img-responsive" alt="rockster">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Desenvolvedor - Rockster<br/>
-                                    (2017-2018)
-                                </div>
-                                <div class="project-name">
-                                    Projeto: Plataforma Rockster
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <-- Modal -->
-    <!-- <div id="modal0" class="modal fade" role="dialog">
-        <div class="modal-dialog"> -->
-    <!-- Modal content-->
-    <!-- <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Detalhes</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Desenvolvimento de plataforma web em PHP, aplicativo mobile Android e híbrido;</p>
-                    <p>Gerenciamento de todo o projeto desde sua concepção até a entrega;</p>
-                    <p><strong>Link (Plataforma): <a href="https://rockster.com.br/"
-                                target="_blank">rockster.com.br</a></strong></p>
-                    <p><strong>Link (Aplicativo Android): <a
-                                href="https://play.google.com/store/apps/details?id=com.app.afinador_rockstar"
-                                target="_blank">play.google.com/store</a></strong></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-4 col-sm-6">
-        <div class="portfolio-box" data-toggle="modal" data-target="#modal1">
-            <img src="img/portfolio/thumbnails/arouca-foto.png" class="img-responsive" alt="arouca">
-            <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                    <div class="project-category text-faded">
-                        Desenvolvedor Java - UFMG-DCC<br />
-                        (2014-2015)
-                    </div>
-                    <div class="project-name">
-                        Projeto: Plataforma Arouca
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Modal -->
-    <!-- <div id="modal1" class="modal fade" role="dialog">
-        <div class="modal-dialog"> -->
-    <!-- Modal content-->
-    <!-- <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Detalhes</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Desenvolvimento de funcionalidades em código Java, XHTML, CSS e JavaScript;</p>
-                    <p>Testes de unidade e correção de defeitos do sistema;</p>
-                    <p>Participação nas reuniões definidas pelo Processo de Desenvolvimento SCRUM Ágil.</p>
-                    <p>Observação:<br />Projeto de grande porte, composto por uma equipe multidisciplinar
-                        (Testers,
-                        Desenvolvedores, Gerentes de projetos, entre outros).</p>
-                    <p><strong>Link: <a href="http://arouca.unasus.gov.br/"
-                                target="_blank">arouca.unasus.gov.br</a></strong></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- <div class="col-lg-4 col-sm-6">
-        <div class="portfolio-box" data-toggle="modal" data-target="#modal2">
-            <img src="img/portfolio/thumbnails/ammpmg-home-foto.png" class="img-responsive" alt="ammp-mg">
-            <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                    <div class="project-category text-faded">
-                        Desenvolvedor Front end - Virgulinas<br />
-                        (2016)
-                    </div>
-                    <div class="project-name">
-                        Projeto: AMMP-MG
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Modal -->
-    <!-- <div id="modal2" class="modal fade" role="dialog">
-        <div class="modal-dialog"> -->
-    <!-- Modal content-->
-    <!-- <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Detalhes</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Desenvolvimento Front-end de todas as páginas do site;</p>
-                    <p>Codificação e testes de interface;</p>
-                    <p><strong>Link: <a href="http://www.ammp.org.br/" target="_blank">www.ammp.org.br</a></strong></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- <div class="col-lg-4 col-sm-6">
-        <div class="portfolio-box" data-toggle="modal" data-target="#modal3">
-            <img src="img/portfolio/thumbnails/jam-2016-home-foto.png" class="img-responsive" alt="jam2016">
-            <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                    <div class="project-category text-faded">
-                        Desenvolvedor Web - Virgulinas<br />
-                        (2016)
-                    </div>
-                    <div class="project-name">
-                        Projeto: JAM 2016
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Modal -->
-    <!-- <div id="modal3" class="modal fade" role="dialog">
-        <div class="modal-dialog"> -->
-    <!-- Modal content-->
-    <!-- <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Detalhes</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Desenvolvimento em plataforma WordPress de todas as páginas do site;</p>
-                    <p>Codificação e testes das funcionalidades;</p>
-                    <p>Link: <a href="http://jam2016.com.br" target=_blank>jam2016.com.br</a></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- <div class="col-lg-4 col-sm-6">
-        <div class="portfolio-box" data-toggle="modal" data-target="#modal4">
-            <img src="img/portfolio/thumbnails/landing-page-eduxe-foto.png" class="img-responsive" alt="eduxe">
-            <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                    <div class="project-category text-faded">
-                        Desenvolvedor Web - Virgulinas<br />
-                        (2016)
-                    </div>
-                    <div class="project-name">
-                        Projeto: Eduxe Web-Landing Page
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Modal -->
-    <!-- <div id="modal4" class="modal fade" role="dialog">
-        <div class="modal-dialog"> -->
-    <!-- Modal content-->
-    <!-- <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Detalhes</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Desenvolvimento da Landing Page em plataforma WordPress;</p>
-                    <p>Codificação e testes das funcionalidades;</p>
-                    <p><strong>Link: <a href="http://www.eduxe.com.br" target="_blank">www.eduxe.com.br</a></strong></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- <div class="col-lg-4 col-sm-6">
-        <div class="portfolio-box" data-toggle="modal" data-target="#modal5">
-            <img src="img/portfolio/thumbnails/vendomeuantigo-foto-logo.png" class="img-responsive"
-                alt="vendo-meu-antigo">
-            <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                    <div class="project-category text-faded">
-                        Desenvolvedor Web (Freelancer)<br />
-                        (2016)
-                    </div>
-                    <div class="project-name">
-                        Projeto: Vendo Meu Antigo<br />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Modal -->
-    <!-- <div id="modal5" class="modal fade" role="dialog">
-        <div class="modal-dialog"> -->
-    <!-- Modal content-->
-    <!-- <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Detalhes</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Desenvolvimento de funcionalidades em código PHP, HTML, CSS e JavaScript/AJAX em
-                        plataforma
-                        WordPress;</p>
-                    <p>Validação, testes e correção de defeitos do sistema;</p>
-                    <p></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- <div class="col-lg-4 col-sm-6">
-        <div class="portfolio-box" data-toggle="modal" data-target="#modal6">
-            <img src="img/portfolio/thumbnails/empreendedoras-logo.png" class="img-responsive" alt="empreendedoras">
-            <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                    <div class="project-category text-faded">
-                        Desenvolvedor Web (Freelancer)<br />
-                        (2016)
-                    </div>
-                    <div class="project-name">
-                        Projeto: Empreendedoras
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Modal -->
-    <!-- <div id="modal6" class="modal fade" role="dialog">
-        <div class="modal-dialog"> -->
-    <!-- Modal content-->
-    <!-- <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Detalhes</h4>
-                </div>
-                <div class="modal-body">
-                    <p></p>
-                    <p>Desenvolvimento de funcionalidade em linguagem PHP</p>
-                    <p><strong>Link: <a href="http://empreendedoras.com.br"
-                                target="_blank">empreendedoras.com.br</a></strong></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- </div>
-    </div>
-    </section> -->
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Contatos</h2>
-                    <hr class="primary">
-                    <p></p>
-                </div>
-
-                <!-- <div class="col-lg-3 col-lg-offset-3 text-center">
-                    <i class="fa fa-phone fa-3x sr-contact"></i>
-                    <p><a href="tel:31971496777">(31) 97149-6777</a></p>
-                </div> -->
-                <div class="col-lg-12 text-center">
-                    <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-                    <p><a href="mailto:lucas.lmnsistemas@gmail.com">lucas.lmnsistemas@gmail.com</a></p>
-                </div>
-
-                <!-- <div class="col-lg-1 col-lg-offset-4 col-md-2 col-md-offset-2 col-xs-3 text-center"> -->
-                <!-- <p><a href="https://www.facebook.com/lucasmrcnovaes"><i
-                                class="fa fa-facebook fa-3x sr-contact"></i></a></p> -->
-                <!-- </div> -->
-                <div class="col-lg-1 col-lg-offset-4 col-md-2 col-md-offset-2 col-xs-3 text-center">
-                    <p><a href="https://github.com/LucasNovaes"><i class="fa fa-github fa-3x sr-contact"></i></a>
+    <main>
+        <section class="hero" id="top">
+            <div class="card-stage">
+                <div class="card" id="businessCard">
+                    <div class="card__sheen"></div>
+                    <div class="card__glow"></div>
+                    <div class="card__mark">LN</div>
+                    <h1 class="card__name">Lucas Novaes</h1>
+                    <p class="card__role">Software Developer</p>
+                    <p class="card__location">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 22s7-7.58 7-13A7 7 0 0 0 5 9c0 5.42 7 13 7 13Z" />
+                            <circle cx="12" cy="9" r="2.5" />
+                        </svg>
+                        Belo Horizonte, Brazil
                     </p>
+                    <hr class="card__divider">
+                    <ul class="card__links">
+                        <li>
+                            <a href="mailto:lucasmnovaes@gmail.com" aria-label="Email" title="Email">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                    stroke-width="1.8">
+                                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                                    <path d="m3 7 9 6 9-6" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/LucasNovaes" target="_blank" rel="noopener" aria-label="GitHub"
+                                title="GitHub">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                                    <path
+                                        d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.53.12-3.19 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.02 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.89.12 3.19.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/lucasmnovaes/" target="_blank" rel="noopener"
+                                aria-label="LinkedIn" title="LinkedIn">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                                    <path
+                                        d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://pt.stackoverflow.com/users/74632/lucas-novaes" target="_blank"
+                                rel="noopener" aria-label="Stack Overflow" title="Stack Overflow">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                                    <path
+                                        d="M17.3 20.1v-5.4h1.8V22H4.6v-7.3h1.8v5.4ZM8.1 14.3l8.7 1.8.4-1.8-8.7-1.8Zm1.2-4.3 8 3.8.8-1.7-8-3.8Zm2.4-4 6.8 5.7 1.2-1.4-6.8-5.7ZM16 2l-1.5 1.1 5.1 6.9L21 9ZM7.8 18.2h9v-1.8h-9Z" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-lg-1 col-md-2 col-xs-3 text-center">
-                    <p><a href="https://www.linkedin.com/in/lucasmnovaes/"><i
-                                class="fa fa-linkedin fa-3x sr-contact"></i></a></p>
+                <div class="card-stage__shadow"></div>
+            </div>
+
+            <a class="scroll-cue" href="#about" aria-label="Scroll down">
+                <span></span>
+            </a>
+        </section>
+
+        <section class="about" id="about">
+            <div class="about__photo reveal">
+                <div class="about__ring">
+                    <img src="img/lucas-novaes.jpg" alt="Portrait of Lucas Novaes" loading="lazy">
                 </div>
-                <div class="col-lg-1 col-md-2 col-xs-3 text-center">
-                    <p><a href="https://pt.stackoverflow.com/users/74632/lucas-novaes"><i
-                                class="fa fa-stack-overflow fa-3x sr-contact"></i></a></p>
+            </div>
+            <div class="about__text reveal">
+                <p class="section-kicker">About</p>
+                <h2>Turning ideas into optimized software.</h2>
+                <p>
+                    Software developer since 2014, with a BSc in Information Systems from PUC Minas (2015).
+                    I like working across the stack — from backend logic and databases to clean,
+                    responsive interfaces — and I care about writing code that is simple, efficient
+                    and built to last.
+                </p>
+            </div>
+        </section>
+
+        <section class="skills" id="skills">
+            <p class="section-kicker reveal">Skills</p>
+            <h2 class="reveal">Tools of the trade.</h2>
+
+            <div class="skills__grid">
+                <div class="skill-group reveal">
+                    <div class="skill-group__head">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path d="m8 9-4 3 4 3M16 9l4 3-4 3M13 5l-2 14" />
+                        </svg>
+                        <h3>Languages</h3>
+                    </div>
+                    <ul class="tag-list">
+                        <li>Java</li>
+                        <li>Dart</li>
+                        <li>TypeScript</li>
+                        <li>JavaScript</li>
+                        <li>Kotlin</li>
+                        <li>Swift</li>
+                    </ul>
                 </div>
 
-            </div>
-        </div>
-    </section>
+                <div class="skill-group reveal">
+                    <div class="skill-group__head">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                            <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                            <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                            <rect x="14" y="14" width="7" height="7" rx="1.5" />
+                        </svg>
+                        <h3>Frameworks &amp; Tools</h3>
+                    </div>
+                    <ul class="tag-list">
+                        <li>Node</li>
+                        <li>Flutter</li>
+                        <li>Quarkus</li>
+                        <li>SpringBoot</li>
+                        <li>Android</li>
+                        <li>iOS</li>
+                        <li>AWS</li>
+                    </ul>
+                </div>
 
-    <footer class="footer text-center bg-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    Lucasmnovaes - 2016 - 2025
+                <div class="skill-group reveal">
+                    <div class="skill-group__head">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <ellipse cx="12" cy="5" rx="8" ry="3" />
+                            <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5" />
+                            <path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" />
+                        </svg>
+                        <h3>Databases</h3>
+                    </div>
+                    <ul class="tag-list">
+                        <li>Oracle</li>
+                        <li>PostgreSQL</li>
+                        <li>MySQL</li>
+                        <li>DynamoDB</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group reveal">
+                    <div class="skill-group__head">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <circle cx="6" cy="6" r="2.5" />
+                            <circle cx="6" cy="18" r="2.5" />
+                            <circle cx="18" cy="12" r="2.5" />
+                            <path d="M6 8.5v7M8.2 5.4 15.8 10.4M8.2 18.6l7.6-5" />
+                        </svg>
+                        <h3>Version Control</h3>
+                    </div>
+                    <ul class="tag-list">
+                        <li>Git</li>
+                        <li>GitHub</li>
+                        <li>GitLab</li>
+                        <li>Bitbucket</li>
+                        <li>SVN</li>
+                    </ul>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <p class="section-kicker reveal">Contact</p>
+            <h2 class="reveal">Let&rsquo;s build something.</h2>
+            <p class="contact__lead reveal">Open to new opportunities, freelance projects and a good technical
+                conversation.</p>
+
+            <button class="email-btn reveal" id="copyEmailBtn" type="button" data-email="lucasmnovaes@gmail.com">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="m3 7 9 6 9-6" />
+                </svg>
+                <span class="email-btn__text">lucasmnovaes@gmail.com</span>
+                <span class="email-btn__copied">Copied!</span>
+            </button>
+
+            <ul class="social-row reveal">
+                <li>
+                    <a href="https://github.com/LucasNovaes" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                            <path
+                                d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.53.12-3.19 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.02 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.89.12 3.19.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z" />
+                        </svg>
+                        <span>GitHub</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/lucasmnovaes/" target="_blank" rel="noopener"
+                        aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                            <path
+                                d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z" />
+                        </svg>
+                        <span>LinkedIn</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://pt.stackoverflow.com/users/74632/lucas-novaes" target="_blank" rel="noopener"
+                        aria-label="Stack Overflow">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                            <path
+                                d="M17.3 20.1v-5.4h1.8V22H4.6v-7.3h1.8v5.4ZM8.1 14.3l8.7 1.8.4-1.8-8.7-1.8Zm1.2-4.3 8 3.8.8-1.7-8-3.8Zm2.4-4 6.8 5.7 1.2-1.4-6.8-5.7ZM16 2l-1.5 1.1 5.1 6.9L21 9ZM7.8 18.2h9v-1.8h-9Z" />
+                        </svg>
+                        <span>Stack Overflow</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2016&ndash;2026 Lucas Novaes. Built from scratch with vanilla JS &amp; Three.js.</p>
     </footer>
 
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
-
-    <!-- Theme JavaScript -->
-    <script src="js/creative.min.js"></script>
-
+    <script type="module" src="js/main.js"></script>
 </body>
 
 </html>

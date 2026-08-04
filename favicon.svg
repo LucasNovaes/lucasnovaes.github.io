@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Lucas Novaes">
+    <defs>
+        <linearGradient id="orb" x1="18%" y1="6%" x2="84%" y2="96%">
+            <stop offset="0%" stop-color="#d8f2ff"/>
+            <stop offset="46%" stop-color="#7dd3fc"/>
+            <stop offset="100%" stop-color="#a78bfa"/>
+        </linearGradient>
+
+        <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#34d399"/>
+            <stop offset="52%" stop-color="#7dd3fc"/>
+            <stop offset="100%" stop-color="#c4b5fd"/>
+        </linearGradient>
+
+        <radialGradient id="plate" cx="40%" cy="24%" r="88%">
+            <stop offset="0%" stop-color="#232f57"/>
+            <stop offset="100%" stop-color="#080a14"/>
+        </radialGradient>
+    </defs>
+
+    <rect width="512" height="512" rx="104" fill="url(#plate)"/>
+
+    <!-- shapes are deliberately heavy so the mark survives at 16px -->
+    <g transform="rotate(-28 256 256)">
+        <ellipse cx="256" cy="256" rx="232" ry="96" fill="none" stroke="url(#ring)" stroke-width="38"
+            stroke-opacity=".5"/>
+    </g>
+
+    <circle cx="256" cy="256" r="146" fill="url(#orb)"/>
+
+    <!-- front half of the orbit, so it reads as passing around the orb -->
+    <g transform="rotate(-28 256 256)">
+        <path d="M24 256a232 96 0 0 0 232 96 232 96 0 0 0 232-96" fill="none" stroke="url(#ring)"
+            stroke-width="38" stroke-linecap="round"/>
+    </g>
+</svg>
