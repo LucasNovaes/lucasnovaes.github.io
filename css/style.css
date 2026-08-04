@@ -247,6 +247,39 @@ h1, h2, h3 {
     transform: translateZ(24px);
 }
 
+/* Gradient-bordered pill — the one accent that outranks the role line. */
+.card__badge {
+    margin: 0.75rem 0 0;
+    transform: translateZ(28px);
+}
+
+.card__badge span {
+    display: inline-block;
+    position: relative;
+    padding: 0.3rem 0.85rem;
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--accent);
+    background: rgba(125, 211, 252, 0.08);
+}
+
+.card__badge span::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(120deg, var(--accent), var(--accent-2), var(--accent-3));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
 .card__location {
     display: flex;
     align-items: center;
